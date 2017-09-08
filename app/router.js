@@ -7,6 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  //this.route('folders');
+  this.route('folders', function(){
+    this.route('folder', {path: ':folder_id'});
+  });
 });
 
 export default Router;
