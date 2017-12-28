@@ -5,9 +5,18 @@
   </span>
   <div class="expanded-content">
     {{#if isExpanded}}
+      {{#each folder.folders as |subfolder|}}
+        {{expandable-folder folder=subfolder}}
+      {{/each}}
+
       {{#each folder.files as |file|}}
         <div>{{file.name}}</div>
       {{/each}}
+      <p>
+      folder name: {{input value=newFolder}}
+      <button {{action 'saveNewFolder' folder}}>Save Folder</button></p>
+      <p>file name: {{input value=newFile}}
+      <button {{action 'saveNewFile' folder}}>Save File</button></p>
     {{/if}}
   </div>
 </div>
