@@ -3,5 +3,9 @@
     {{#each this.rootFolders as |folder|}}
       {{expandable-folder folder=folder}}
     {{/each}}
+    <p>
+      {{#item-adder null type='folder'}}
+      {{/item-adder}}
+    </p>
   </div>
 </div>

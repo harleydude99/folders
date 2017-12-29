@@ -13,10 +13,13 @@
         <div>{{file.name}}</div>
       {{/each}}
       <p>
-      folder name: {{input value=newFolder}}
-      <button {{action 'saveNewFolder' folder}}>Save Folder</button></p>
-      <p>file name: {{input value=newFile}}
-      <button {{action 'saveNewFile' folder}}>Save File</button></p>
+        {{#item-adder folder type='folder'}}
+        {{/item-adder}}
+      </p>
+      <p>
+        {{#item-adder folder type='file'}}
+        {{/item-adder}}
+      </p>
     {{/if}}
   </div>
 </div>

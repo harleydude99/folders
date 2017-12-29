@@ -1,0 +1,8 @@
+<p>
+    {{#if isEditing}}
+      <p>{{type}} name: {{input value=newItem}}
+      <button {{action 'saveNewItem' folder type}}>Save</button></p>
+    {{else}}
+        <p><button {{action 'startItemNaming'}}>+ {{type}}</button></p>
+    {{/if}}
+</p>
