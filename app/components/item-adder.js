@@ -9,7 +9,6 @@ export default Ember.Component.extend({
   			this.set('isEditing', true);
   	},
     saveNewItem(folder, type){
-      console.log(folder);
       let toSaveObject = {
         name:this.get('newItem')
       };
@@ -19,6 +18,7 @@ export default Ember.Component.extend({
         Ember.set(toSaveObject, 'parent', folder);
       }
       this.get('store').createRecord(type, toSaveObject).save();
+      folder.save();
       this.set('newItem', '');
       this.set('isEditing', false);
     }
